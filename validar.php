@@ -11,11 +11,15 @@ $resultado=mysqli_query($conexion,$consulta);
 
 $filas=mysqli_fetch_array($resultado);
 
-if($filas['id_cargo']==1){ //administrador
+if($filas['id_cargo']==1){ //profesor   
     header("location:admin.php");
 
 }else
-if($filas['id_cargo']==2){ //cliente
+if($filas['id_cargo']==2){ //estudiante
+header("location:cliente.php");
+}
+else
+if($filas['id_cargo']==3){ //acudiente
 header("location:cliente.php");
 }
 else{
